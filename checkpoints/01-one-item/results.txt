@@ -1,0 +1,7 @@
+[]	Ok([])
+[12]	Ok([12])
+[12,3]	Err("expected an integer")
+[1,[2,3],4]	Err("expected an integer")
+[[],4]	Err("expected an integer")
+[1,]	Err("expected an integer")
+[1]x	Err("expected an array")

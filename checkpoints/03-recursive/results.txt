@@ -1,0 +1,7 @@
+[]	Ok(Array([]))
+[12]	Ok(Array([Number(12)]))
+[12,3]	Ok(Array([Number(12), Number(3)]))
+[1,[2,3],4]	Ok(Array([Number(1), Array([Number(2), Number(3)]), Number(4)]))
+[[],4]	Ok(Array([Array([]), Number(4)]))
+[1,]	Err(ParseError { offset: 3, expected: "an integer or an array" })
+[1]x	Err(ParseError { offset: 3, expected: "end of input" })
