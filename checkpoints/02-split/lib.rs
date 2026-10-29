@@ -10,7 +10,7 @@ pub fn parse(input: &str) -> Result<Vec<i64>, &'static str> {
     }
 
     let mut items = Vec::new();
-    for part in inside..split(',') {
+    for part in inside.split(',') {
         let number = part.parse::<i64>().map_err(|_| "expected an integer")?;
         items.push(number);
     }
