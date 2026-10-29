@@ -12,5 +12,5 @@ fn one_integer() {
 
 #[test]
 fn flat_is_not_yet_supported() {
-    assert!(parser::parse("[12, 3").is_err());
+    assert!(parser::parse("[12, 3]").is_err());
 }
