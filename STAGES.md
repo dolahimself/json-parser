@@ -237,15 +237,3 @@ Number: 3
 "Outer readings: 3" is exactly the case stage 2 got wrong and stage 3 fixed.
 
 ---
-
-## Inconsistencies found
-
-I noticed these while reading the stages. I left them unchanged:
-
-1. **The folder is named `checkpoints/`, not `stages/`.** Git still shows an old `stages/` folder, but it isn't on disk anymore.
-2. **[02-split/lib.rs](checkpoints/02-split/lib.rs) won't compile:** `inside..split(',')` has a doubled dot (should be `inside.split(',')`). Its header comment also still says "checkpoint 1". The [run.rs](checkpoints/02-split/run.rs) version is correct.
-3. **[07-simple-escapes/results.txt](checkpoints/07-simple-escapes/results.txt) looks out of date.** It is identical to stage 6's file. Based on the code, `"a\nb"` should print `Ok(String("a\nb"))`, and the `\u` line should report `InvalidEscape` at offset **2** rather than 1. `check_checkpoints.py` will most likely flag this stage. I worked this out from the code and didn't run it.
-4. **`check_checkpoints.py` looks for `lesson_tests.rs`**, but stage 1's file is `lesson_test.rs` (no `s`), so those tests never run.
-5. **In stage 1's `flat_is_not_yet_supported` test**, the input `"[12, 3"` is missing its `]`. It fails with "expected an array" rather than the case the test name describes.
-6. **The README links to `checkpoints/05-strings-objects/`**, but the folder is `05-string-objects`, so that link is broken.
-7. **Stage 4's header comment still says "Checkpoint 3"**, and its fallback error still reads "an integer or an array" even though it now accepts literals too.
